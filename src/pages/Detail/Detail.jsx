@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import Loader from "../../components/Loader";
 import axios from "axios";
 import Characters from "./components/Characters";
+import placeholder from "../../assets/placeholder.jpg";
 
 const Detail = () => {
   const { id } = useParams();
@@ -33,7 +34,6 @@ const Detail = () => {
         ]);
         setComic(comicResponse.data.data.results[0]);
         setCharacters(charactersResponse.data.data.results);
-        console.log(charactersResponse.data.data.results);
         setIsLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -53,17 +53,15 @@ const Detail = () => {
   }
 
   const comicImgPath =
-    comic.images.length > 0
-      ? comic.images[0].path.concat(".jpg")
-      : "../../src/assets/placeholder.jpg";
-  console.log(characters[0]);
+    comic.images.length > 0 ? comic.images[0].path.concat(".jpg") : placeholder;
+
   return (
     <div className="container text-white">
       <div className="row">
         <div className="col-12 col-md-6 mt-3 d-flex justify-content-center">
           <img
             src={comicImgPath}
-            alt={"pepe"}
+            alt={comic.title}
             className="rounded img-fluid mx-auto"
             style={{ width: "20rem", height: "30rem" }}
           />

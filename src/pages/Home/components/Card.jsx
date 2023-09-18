@@ -1,11 +1,12 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import placeholder from "../../../assets/placeholder.jpg";
 
 const Card = ({ comics }) => {
   const imagePath =
     comics.images.length > 0
       ? comics.images[0].path.concat(".jpg")
-      : "../../src/assets/placeholder.jpg";
+      : placeholder;
 
   return (
     <>

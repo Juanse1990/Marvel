@@ -2,7 +2,6 @@ import PropTypes from "prop-types";
 import Card from "./Card";
 
 const Characters = ({ characters }) => {
-  console.log(characters);
   return (
     <div className="container">
       <div className="d-flex flex-wrap flex-row col-12">

@@ -1,11 +1,11 @@
 import PropTypes from "prop-types";
+import placeholder from "../../../assets/placeholder.jpg";
 
 const Card = ({ character }) => {
-  console.log(character);
   const imagePath =
     character.thumbnail != null
       ? character.thumbnail.path.concat(".jpg")
-      : "../../src/assets/placeholder.jpg";
+      : placeholder;
 
   return (
     <>
